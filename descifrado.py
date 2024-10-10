@@ -24,6 +24,9 @@ def descifrar():
 
     # Ordenar por frecuencia
     letras_ordenadas = ordenar(letras)
+    # Mensaje original
+    print("Mensaje cifrado:")
+    print(mensaje)
     
     # Mostrar frecuencias
     print("Frecuencias de letras en el mensaje:")
@@ -37,25 +40,25 @@ def descifrar():
         "K": "r",
         "I": "o",
         "C": "i",
-        "J": "n",
-        "T": "l",
-        "A": "d",
-        "R": "c",
-        "Z": "u",
-        "H": "t",
-        "N": "s",
-        "P": "m",
-        "D": "p",
-        "O": "f",
-        "Q": "b",
-        "S": "q",
-        "G": "j",
-        "V": "y",
-        "U": "g",
-        "v": "v",
-        "M": "h",
-        "L": "z",
-        "F": "x",
+        #"J": "n",
+        #"T": "l",
+        #"A": "d",
+        #"R": "c",
+        #"Z": "u",
+        #"H": "t",
+        #"N": "s",
+        #"P": "m",
+        #"D": "p",
+        #"O": "f",
+        #"Q": "b",
+        #"S": "q",
+        #"G": "j",
+        #"V": "y",
+        #"U": "g",
+        #"v": "v",
+        #"M": "h",
+        #"L": "z",
+        #"F": "x",
     }
     
     # Reemplazar las letras en el mensaje
@@ -63,8 +66,22 @@ def descifrar():
     for letra_cifrada, letra_descifrada in reemplazos.items():
         mensaje_reemplazado = mensaje_reemplazado.replace(letra_cifrada, letra_descifrada)
     
+    # Vista en la que solo se muestren las letras reemplazadas y el resto como guiones bajos
+    mensaje_vista_reemplazadas = ""
+    for char in mensaje:
+        if char in reemplazos:
+            mensaje_vista_reemplazadas += reemplazos[char]
+        elif char.isupper():
+            mensaje_vista_reemplazadas += "_"
+        else:
+            mensaje_vista_reemplazadas += char  # Mantener los caracteres no cifrados (espacios, puntuación o números)
+            
     # Imprimir el mensaje descifrado
     print("\nMensaje descifrado:")
     print(mensaje_reemplazado)
+    
+    # Imprimir la vista con solo letras reemplazadas
+    print("\nVista de letras reemplazadas:")
+    print(mensaje_vista_reemplazadas)
 
 descifrar()
