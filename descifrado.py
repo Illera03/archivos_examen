@@ -42,7 +42,10 @@ def descifrar():
         "A": "d",
         "R": "c",
         "Z": "u",
-        "H": "tContar las fp",
+        "H": "t",
+        "N": "s",
+        "P": "m",
+        "D": "p",
         "O": "f",
         "Q": "b",
         "S": "q",
@@ -65,6 +68,3 @@ def descifrar():
     print(mensaje_reemplazado)
 
 descifrar()
-
-
-
